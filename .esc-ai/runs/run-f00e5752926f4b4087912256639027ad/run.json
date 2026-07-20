@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "run": {
+    "id": "run-f00e5752926f4b4087912256639027ad",
+    "task_id": "fault-data-foundation",
+    "status": "succeeded",
+    "created_at": "2026-07-20T21:20:03.103483Z",
+    "started_at": "2026-07-20T21:20:03.103483Z",
+    "ended_at": "2026-07-20T21:22:29.288908Z"
+  },
+  "bindings": {
+    "adapter": "claude-code-claude",
+    "workspace": "workspace-garage-management-system-default",
+    "policy": "session-override-permissive",
+    "tool_grant": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Edit",
+      "Write",
+      "NotebookEdit",
+      "Bash",
+      "WebFetch",
+      "WebSearch"
+    ],
+    "instruction_bundle": "instruction-bundle.json"
+  },
+  "events": "events.jsonl",
+  "artifacts": [
+    "artifact.json"
+  ],
+  "adapter_metadata": {
+    "provider": "claude-code",
+    "session_id": "f5c170ad-75cc-492d-90ba-9750261f3966",
+    "total_cost_usd": 0.7961566999999997,
+    "num_turns": 26
+  }
+}

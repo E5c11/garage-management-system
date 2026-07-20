@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "task": {
+    "id": "fault-data-foundation",
+    "repository": "garage-management-system",
+    "objective": "Define the shared fault-report data model, an in-memory server-side store, and the Server Actions/read APIs both the customer submission screen and the manager dashboard screen will call: a Fault record (customer_name, car_metadata {brand, model}, description, urgency, safety_advice optional, plus manager-editable fields: affected_systems array, questions_for_customer array, suggested_inspection_items, status enum complete/await_payment/not_started/scheduled defaulting to not_started, scheduled_for) with create/list/get/update operations backed by a module-level in-memory store (no DB, no external persistence)."
+  },
+  "routing": {
+    "repository_index": ".esc-ai/esc-index.json",
+    "input_digest": "sha256:2b569373369e693b75bcee918674cba531e62cdad1e7ee46184f18cb9acc4007",
+    "components": [
+      {
+        "id": "garage-management-system",
+        "purpose": "Turns free-text customer vehicle fault descriptions into structured fault reports for a service adviser/workshop: a customer-facing submission form and a manager dashboard for triaging, prioritizing, and resolving faults.",
+        "manifest": ".esc-ai/components/garage-management-system/esc-component.yaml",
+        "index": ".esc-ai/components/garage-management-system/esc-index.json",
+        "search_roots": [
+          "README.md",
+          "app"
+        ],
+        "architecture": {
+          "profile_ids": [
+            "PLAT-WEB-NEXT",
+            "PLAT-WEB-NEXT-APP"
+          ],
+          "documents": [
+            {
+              "id": "CORE-COUPLING",
+              "path": "core/coupling.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-NAMING",
+              "path": "core/naming.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-DI",
+              "path": "core/dependency-inversion.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-ERROR",
+              "path": "core/error-propagation.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-SSOT",
+              "path": "core/single-source-of-truth.md",
+              "layer": "core"
+            },
+            {
+              "id": "PAT-DATA-ACCESS",
+              "path": "patterns/data-access-abstraction.md",
+              "layer": "patterns"
+            },
+            {
+              "id": "PAT-OUTCOME",
+              "path": "patterns/result-type.md",
+              "layer": "patterns"
+            },
+            {
+              "id": "PAT-OBSERVER",
+              "path": "patterns/observable-data.md",
+              "layer": "patterns"
+            },
+            {
+              "id": "ARCH-WEB-APP",
+              "path": "architectures/web-app/overview.md",
+              "layer": "architectures"
+            },
+            {
+              "id": "ARCH-WEB-APP-ERR-CLASSES",
+              "path": "architectures/web-app/error-classes.md",
+              "layer": "architectures"
+            },
+            {
+              "id": "PLAT-WEB-NEXT",
+              "path": "platforms/web/nextjs.md",
+              "layer": "platforms"
+            },
+            {
+              "id": "PLAT-WEB-NEXT-APP",
+              "path": "platforms/web/nextjs-app.md",
+              "layer": "platforms"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "scope": {
+    "paths": [],
+    "references": [],
+    "completion_conditions": [
+      "A Fault TypeScript type/interface exists covering: customer_name (string), car_metadata ({brand, model}), description (string), urgency (string), safety_advice (optional string), affected_systems (string array), questions_for_customer (string array), suggested_inspection_items (string array), status (enum: not_started/scheduled/complete/await_payment, non-nullable, default not_started), scheduled_for (optional string/date)",
+      "A module-level in-memory store (survives across requests within the same server process) holds Fault records keyed by a stable id",
+      "Server-side functions/Server Actions exist to: create a fault (customer intake shape only), list all faults, get one fault by id, and update a fault's manager-editable fields (priority/urgency, status, scheduled_for, affected_systems, questions_for_customer, suggested_inspection_items)",
+      "Newly created faults default to status = not_started with empty arrays for affected_systems/questions_for_customer/suggested_inspection_items",
+      "npm run build succeeds with no type errors"
+    ]
+  },
+  "bounds": {
+    "max_components": 10,
+    "max_paths": 30,
+    "max_references": 30
+  }
+}

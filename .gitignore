@@ -43,4 +43,3 @@ next-env.d.ts
 
 # escape-ai orchestrator process-local state (not portable, not committed)
 /.orchestrator/
-/.esc-ai/runs/

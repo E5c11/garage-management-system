@@ -1,3 +1,4 @@
+## Prompt 1
 I have recieved this task:
 [Pasted text #1]
 This should be a 2 screen app, one for the customer faults one for the manager's portal where they can view all fault in a table and have the ability to view, by clicking on an item and edit the fault report, by either changing the priority or marking it
@@ -17,3 +18,5 @@ scheduled_for.
 After onboarding, create the tasks in the workflow with a dependency graph of the tasks to indicate for parallel agents                                                                                                                                           
 Report back after task creation for me to review the task dependency graph 
 
+## Prompt 2
+Run the tasks — start with fault-data-foundation

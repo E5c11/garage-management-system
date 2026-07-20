@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "task_id": "fault-data-foundation",
+  "profiles": [
+    ".esc-ai/components/garage-management-system/esc-verification-profile.yaml"
+  ],
+  "strategy": {
+    "order": [
+      "focused",
+      "component",
+      "impact",
+      "final"
+    ],
+    "stop_on_failure": true
+  },
+  "impact": {
+    "graph": "esc-dependencies.json",
+    "source_components": [
+      "garage-management-system"
+    ],
+    "consumer_components": []
+  },
+  "gates": [
+    {
+      "id": "focused",
+      "status": "not-applicable",
+      "checks": []
+    },
+    {
+      "id": "component",
+      "status": "ready",
+      "checks": [
+        {
+          "id": "garage-management-system-lint",
+          "command": [
+            "npm",
+            "run",
+            "lint"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "impact",
+      "status": "not-applicable",
+      "checks": []
+    },
+    {
+      "id": "final",
+      "status": "ready",
+      "checks": [
+        {
+          "id": "garage-management-system-build",
+          "command": [
+            "npm",
+            "run",
+            "build"
+          ]
+        }
+      ]
+    }
+  ]
+}

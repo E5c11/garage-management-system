@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_by": "esc-exec",
-  "input_digest": "sha256:f1ee98b741853c62349a33929a61ccc1d7fcdcfc1646b139aa86d3fc28dca404",
+  "input_digest": "sha256:52f61eb3ac365515cb0fa85147566aa5e564474e8d38990184a376ad8b766e09",
   "repository": "garage-management-system",
   "component": {
     "id": "garage-management-system",

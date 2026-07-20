@@ -1,0 +1,25 @@
+schema_version: 1
+checkpoint:
+  id: checkpoint-fault-data-foundation
+  task_id: fault-data-foundation
+  status: blocked
+  objective: 'Define the shared fault-report data model, an in-memory server-side
+    store, and the Server Actions/read APIs both the customer submission screen and
+    the manager dashboard screen will call: a Fault record (customer_name, car_metadata
+    {brand, model}, description, urgency, safety_advice optional, plus manager-editable
+    fields: affected_systems array, questions_for_customer array, suggested_inspection_items,
+    status enum complete/await_payment/not_started/scheduled defaulting to not_started,
+    scheduled_for) with create/list/get/update operations backed by a module-level
+    in-memory store (no DB, no external persistence).'
+  updated_at: '2026-07-20T21:16:25.347945Z'
+  run_id: run-c5d625304eba4e38b3c0857e1e01a2aa
+progress:
+  completed: []
+  decisions: []
+  remaining:
+  - Resolve the recorded blocker and resume the task.
+  blockers:
+  - 'component garage-management-system has no paths.verification_profile; run: esc-exec
+    verification profile generate garage-management-system garage-management-system'
+  artifacts: []
+  last_event_sequence: 1

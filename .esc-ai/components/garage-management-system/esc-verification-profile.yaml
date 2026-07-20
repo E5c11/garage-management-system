@@ -1,0 +1,19 @@
+schema_version: 1
+profile:
+  id: garage-management-system-verification
+  component: garage-management-system
+gates:
+  focused: []
+  component:
+  - id: garage-management-system-lint
+    command:
+    - npm
+    - run
+    - lint
+  impact: []
+  final:
+  - id: garage-management-system-build
+    command:
+    - npm
+    - run
+    - build
