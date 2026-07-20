@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "run": {
+    "id": "run-6fceea663c9645388ea730e09c5522f8",
+    "task_id": "manager-fault-dashboard-screen",
+    "status": "failed",
+    "created_at": "2026-07-20T21:28:38.290638Z",
+    "started_at": "2026-07-20T21:28:38.290638Z",
+    "ended_at": "2026-07-20T21:38:38.345407Z"
+  },
+  "bindings": {
+    "adapter": "claude-code-claude",
+    "workspace": "workspace-garage-management-system-default",
+    "policy": "session-override-permissive",
+    "tool_grant": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Edit",
+      "Write",
+      "NotebookEdit",
+      "Bash",
+      "WebFetch",
+      "WebSearch"
+    ],
+    "instruction_bundle": "instruction-bundle.json"
+  },
+  "events": "events.jsonl",
+  "artifacts": [],
+  "adapter_metadata": {
+    "provider": "claude-code",
+    "session_id": null,
+    "total_cost_usd": null,
+    "num_turns": null
+  }
+}

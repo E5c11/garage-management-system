@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "task": {
+    "id": "manager-fault-dashboard-screen",
+    "repository": "garage-management-system",
+    "objective": "Build the manager/service-adviser dashboard screen: two tables, Active and Todo, listing faults from the shared in-memory store (from the fault-data-foundation task). Clicking a fault opens a detail/edit view where the manager can change its priority/urgency, and mark it complete, complete-but-awaiting-payment, or otherwise update its status. Active vs Todo table placement reflects whether the fault has been triaged/edited by a manager yet."
+  },
+  "routing": {
+    "repository_index": ".esc-ai/esc-index.json",
+    "input_digest": "sha256:2b569373369e693b75bcee918674cba531e62cdad1e7ee46184f18cb9acc4007",
+    "components": [
+      {
+        "id": "garage-management-system",
+        "purpose": "Turns free-text customer vehicle fault descriptions into structured fault reports for a service adviser/workshop: a customer-facing submission form and a manager dashboard for triaging, prioritizing, and resolving faults.",
+        "manifest": ".esc-ai/components/garage-management-system/esc-component.yaml",
+        "index": ".esc-ai/components/garage-management-system/esc-index.json",
+        "search_roots": [
+          "README.md",
+          "app"
+        ],
+        "architecture": {
+          "profile_ids": [
+            "PLAT-WEB-NEXT",
+            "PLAT-WEB-NEXT-APP"
+          ],
+          "documents": [
+            {
+              "id": "CORE-COUPLING",
+              "path": "core/coupling.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-NAMING",
+              "path": "core/naming.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-DI",
+              "path": "core/dependency-inversion.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-ERROR",
+              "path": "core/error-propagation.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-SSOT",
+              "path": "core/single-source-of-truth.md",
+              "layer": "core"
+            },
+            {
+              "id": "PAT-DATA-ACCESS",
+              "path": "patterns/data-access-abstraction.md",
+              "layer": "patterns"
+            },
+            {
+              "id": "PAT-OUTCOME",
+              "path": "patterns/result-type.md",
+              "layer": "patterns"
+            },
+            {
+              "id": "PAT-OBSERVER",
+              "path": "patterns/observable-data.md",
+              "layer": "patterns"
+            },
+            {
+              "id": "ARCH-WEB-APP",
+              "path": "architectures/web-app/overview.md",
+              "layer": "architectures"
+            },
+            {
+              "id": "ARCH-WEB-APP-ERR-CLASSES",
+              "path": "architectures/web-app/error-classes.md",
+              "layer": "architectures"
+            },
+            {
+              "id": "PLAT-WEB-NEXT",
+              "path": "platforms/web/nextjs.md",
+              "layer": "platforms"
+            },
+            {
+              "id": "PLAT-WEB-NEXT-APP",
+              "path": "platforms/web/nextjs-app.md",
+              "layer": "platforms"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "scope": {
+    "paths": [],
+    "references": [],
+    "completion_conditions": [
+      "A manager-facing route renders two tables, Active and Todo, populated from the shared list-faults Server Action",
+      "Todo holds faults a manager has not yet edited/triaged; Active holds faults a manager has edited (or otherwise progressed) — table placement rule is implemented and visible",
+      "Clicking a fault row opens a view/edit interface for that single fault",
+      "From the edit view, a manager can change the fault's priority/urgency",
+      "From the edit view, a manager can set status to complete, or to complete-but-awaiting-payment (await_payment), or otherwise update status (not_started/scheduled)",
+      "Edits are persisted via the shared update-fault Server Action from fault-data-foundation and reflected in the table on return",
+      "npm run build succeeds with no type errors"
+    ]
+  },
+  "bounds": {
+    "max_components": 10,
+    "max_paths": 30,
+    "max_references": 30
+  }
+}

@@ -1,0 +1,22 @@
+schema_version: 1
+checkpoint:
+  id: checkpoint-manager-fault-dashboard-screen
+  task_id: manager-fault-dashboard-screen
+  status: blocked
+  objective: 'Build the manager/service-adviser dashboard screen: two tables, Active
+    and Todo, listing faults from the shared in-memory store (from the fault-data-foundation
+    task). Clicking a fault opens a detail/edit view where the manager can change
+    its priority/urgency, and mark it complete, complete-but-awaiting-payment, or
+    otherwise update its status. Active vs Todo table placement reflects whether the
+    fault has been triaged/edited by a manager yet.'
+  updated_at: '2026-07-20T21:38:38.358329Z'
+  run_id: run-a31c0b593f4d49829f5e5a3e02d15d41
+progress:
+  completed: []
+  decisions: []
+  remaining:
+  - Resolve the recorded blocker and resume the task.
+  blockers:
+  - claude-code run failed; see /home/emmanuel/WebstormProjects/garage-management-system/.esc-ai/runs/run-6fceea663c9645388ea730e09c5522f8/events.jsonl
+  artifacts: []
+  last_event_sequence: 1

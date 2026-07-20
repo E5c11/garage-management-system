@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "run": {
+    "id": "run-6fceea663c9645388ea730e09c5522f8",
+    "task_id": "manager-fault-dashboard-screen",
+    "provider": "claude-code",
+    "status": "failed"
+  },
+  "context": {
+    "bytes": 4331,
+    "components": 1,
+    "paths": 0,
+    "references": 0
+  },
+  "execution": {
+    "elapsed_ms": 600058,
+    "tool_calls": 0,
+    "read_calls": 0,
+    "agent_messages": 0,
+    "rework_events": 0
+  },
+  "tokens": {
+    "status": "unavailable",
+    "input": null,
+    "output": null,
+    "reasoning": null,
+    "cache_read": null,
+    "cache_write": null,
+    "total": null
+  },
+  "generated_at": "2026-07-20T21:38:38.345758Z"
+}
