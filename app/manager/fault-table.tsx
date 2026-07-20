@@ -1,4 +1,6 @@
-import Link from 'next/link'
+'use client'
+
+import { useRouter } from 'next/navigation'
 import type { Fault } from '@/app/lib/faults/types'
 import { StatusBadge, UrgencyBadge, formatDate } from './lib/labels'
 
@@ -36,31 +38,46 @@ export function FaultTable({
             </thead>
             <tbody className="divide-y divide-zinc-100">
               {faults.map((fault) => (
-                <Link key={fault.id} href={`/manager/${fault.id}`} className="contents">
-                  <tr className="cursor-pointer hover:bg-zinc-50">
-                    <td className="px-4 py-3 font-medium">{fault.customer_name}</td>
-                    <td className="px-4 py-3 whitespace-nowrap">
-                      {fault.car_metadata.brand} {fault.car_metadata.model}
-                    </td>
-                    <td className="max-w-xs truncate px-4 py-3 text-zinc-600">
-                      {fault.description}
-                    </td>
-                    <td className="px-4 py-3">
-                      <UrgencyBadge urgency={fault.urgency} />
-                    </td>
-                    <td className="px-4 py-3">
-                      <StatusBadge status={fault.status} />
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-3 text-zinc-500">
-                      {formatDate(fault.updated_at)}
-                    </td>
-                  </tr>
-                </Link>
+                <FaultRow key={fault.id} fault={fault} />
               ))}
             </tbody>
           </table>
         </div>
       )}
     </section>
+  )
+}
+
+function FaultRow({ fault }: { fault: Fault }) {
+  const router = useRouter()
+  const href = `/manager/${fault.id}`
+
+  return (
+    <tr
+      role="link"
+      tabIndex={0}
+      onClick={() => router.push(href)}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter') router.push(href)
+      }}
+      className="cursor-pointer hover:bg-zinc-50"
+    >
+      <td className="px-4 py-3 font-medium">{fault.customer_name}</td>
+      <td className="px-4 py-3 whitespace-nowrap">
+        {fault.car_metadata.brand} {fault.car_metadata.model}
+      </td>
+      <td className="max-w-xs truncate px-4 py-3 text-zinc-600">
+        {fault.description}
+      </td>
+      <td className="px-4 py-3">
+        <UrgencyBadge urgency={fault.urgency} />
+      </td>
+      <td className="px-4 py-3">
+        <StatusBadge status={fault.status} />
+      </td>
+      <td className="whitespace-nowrap px-4 py-3 text-zinc-500">
+        {formatDate(fault.updated_at)}
+      </td>
+    </tr>
   )
 }

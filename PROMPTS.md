@@ -23,3 +23,12 @@ Run the tasks — start with fault-data-foundation
 
 ## Prompt 3
 Yes, kick off both in parallel
+
+## Prompt 4
+There are 5 reported errors on teh manager screen, look into and fix them then report back.  
+Console logs
+
+## Prompt 5
+There are 5 reported errors on teh manager screen, look into and fix them then report back.                                                                                                                                                                       
+
+## Prompt 6
