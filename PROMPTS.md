@@ -32,4 +32,7 @@ Console logs
 There are 5 reported errors on teh manager screen, look into and fix them then report back.                                                                                                                                                                       
 
 ## Prompt 6
-Add testing instructions in `README.md` for both the Customer and Manager Screen, include the manager screen route.     
+Add testing instructions in `README.md` for both the Customer and Manager Screen, include the manager screen route.   
+
+## Prompt 7
+
