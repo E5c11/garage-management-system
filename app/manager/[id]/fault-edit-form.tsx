@@ -55,7 +55,7 @@ export function FaultEditForm({ fault }: { fault: Fault }) {
         Affected systems (one per line)
         <textarea
           name="affected_systems"
-          defaultValue={current.affected_systems.join('\n')}
+          defaultValue={(current.affected_systems ?? []).join('\n')}
           rows={3}
           className="rounded border border-zinc-300 px-3 py-2"
         />
@@ -65,7 +65,7 @@ export function FaultEditForm({ fault }: { fault: Fault }) {
         Questions for customer (one per line)
         <textarea
           name="questions_for_customer"
-          defaultValue={current.questions_for_customer.join('\n')}
+          defaultValue={(current.questions_for_customer ?? []).join('\n')}
           rows={3}
           className="rounded border border-zinc-300 px-3 py-2"
         />
@@ -75,7 +75,7 @@ export function FaultEditForm({ fault }: { fault: Fault }) {
         Suggested inspection items (one per line)
         <textarea
           name="suggested_inspection_items"
-          defaultValue={current.suggested_inspection_items.join('\n')}
+          defaultValue={(current.suggested_inspection_items ?? []).join('\n')}
           rows={3}
           className="rounded border border-zinc-300 px-3 py-2"
         />

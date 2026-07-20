@@ -14,11 +14,11 @@ export interface Fault {
   description: string
   urgency: Urgency
   safety_advice?: string
-  affected_systems: string[]
-  questions_for_customer: string[]
-  suggested_inspection_items: string[]
+  affected_systems: string[] | null
+  questions_for_customer: string[] | null
+  suggested_inspection_items: string[] | null
   status: FaultStatus
-  scheduled_for?: string
+  scheduled_for: string | null
   created_at: string
   updated_at: string
 }
