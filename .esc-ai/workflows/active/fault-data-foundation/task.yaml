@@ -1,0 +1,34 @@
+schema_version: 1
+task:
+  id: fault-data-foundation
+  title: Define the shared fault-report data model, an in-memory server-side store,
+    and t
+  objective: 'Define the shared fault-report data model, an in-memory server-side
+    store, and the Server Actions/read APIs both the customer submission screen and
+    the manager dashboard screen will call: a Fault record (customer_name, car_metadata
+    {brand, model}, description, urgency, safety_advice optional, plus manager-editable
+    fields: affected_systems array, questions_for_customer array, suggested_inspection_items,
+    status enum complete/await_payment/not_started/scheduled defaulting to not_started,
+    scheduled_for) with create/list/get/update operations backed by a module-level
+    in-memory store (no DB, no external persistence).'
+  repository: garage-management-system
+  status: ready
+  initiative:
+    id: garage-fault-triage-showcase
+scope:
+  components:
+  - garage-management-system
+completion_conditions:
+- 'A Fault TypeScript type/interface exists covering: customer_name (string), car_metadata
+  ({brand, model}), description (string), urgency (string), safety_advice (optional
+  string), affected_systems (string array), questions_for_customer (string array),
+  suggested_inspection_items (string array), status (enum: not_started/scheduled/complete/await_payment,
+  non-nullable, default not_started), scheduled_for (optional string/date)'
+- A module-level in-memory store (survives across requests within the same server
+  process) holds Fault records keyed by a stable id
+- 'Server-side functions/Server Actions exist to: create a fault (customer intake
+  shape only), list all faults, get one fault by id, and update a fault''s manager-editable
+  fields (priority/urgency, status, scheduled_for, affected_systems, questions_for_customer,
+  suggested_inspection_items)'
+- Newly created faults default to status = not_started with empty arrays for affected_systems/questions_for_customer/suggested_inspection_items
+- npm run build succeeds with no type errors

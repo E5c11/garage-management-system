@@ -1,0 +1,29 @@
+schema_version: 1
+task:
+  id: customer-fault-submission-screen
+  title: 'Build the customer-facing fault-report submission screen: a form with Customer
+    n'
+  objective: 'Build the customer-facing fault-report submission screen: a form with
+    Customer name, car_metadata (brand + model), description, urgency, and optional
+    safety_advice, plus a submit button at the bottom. On submit, write a new fault
+    record to the shared in-memory store (from the fault-data-foundation task) and
+    show the customer a confirmation that their fault has been logged.'
+  repository: garage-management-system
+  status: ready
+  initiative:
+    id: garage-fault-triage-showcase
+    depends_on:
+    - garage-management-system/fault-data-foundation
+scope:
+  components:
+  - garage-management-system
+completion_conditions:
+- 'A customer-facing route renders a form with fields: Customer name, car brand, car
+  model, description, urgency, and an optional safety_advice field'
+- A submit button at the bottom of the form calls the shared create-fault Server Action
+  from fault-data-foundation
+- On successful submission, the user sees a clear on-screen confirmation that their
+  fault has been logged (no silent success, no dead-end)
+- Required fields (customer name, brand, model, description, urgency) cannot be submitted
+  empty; safety_advice is optional
+- npm run build succeeds with no type errors
