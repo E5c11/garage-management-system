@@ -20,3 +20,6 @@ Report back after task creation for me to review the task dependency graph
 
 ## Prompt 2
 Run the tasks — start with fault-data-foundation
+
+## Prompt 3
+Yes, kick off both in parallel

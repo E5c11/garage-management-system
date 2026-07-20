@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "task": {
+    "id": "customer-fault-submission-screen",
+    "repository": "garage-management-system",
+    "objective": "Build the customer-facing fault-report submission screen: a form with Customer name, car_metadata (brand + model), description, urgency, and optional safety_advice, plus a submit button at the bottom. On submit, write a new fault record to the shared in-memory store (from the fault-data-foundation task) and show the customer a confirmation that their fault has been logged."
+  },
+  "routing": {
+    "repository_index": ".esc-ai/esc-index.json",
+    "input_digest": "sha256:2b569373369e693b75bcee918674cba531e62cdad1e7ee46184f18cb9acc4007",
+    "components": [
+      {
+        "id": "garage-management-system",
+        "purpose": "Turns free-text customer vehicle fault descriptions into structured fault reports for a service adviser/workshop: a customer-facing submission form and a manager dashboard for triaging, prioritizing, and resolving faults.",
+        "manifest": ".esc-ai/components/garage-management-system/esc-component.yaml",
+        "index": ".esc-ai/components/garage-management-system/esc-index.json",
+        "search_roots": [
+          "README.md",
+          "app"
+        ],
+        "architecture": {
+          "profile_ids": [
+            "PLAT-WEB-NEXT",
+            "PLAT-WEB-NEXT-APP"
+          ],
+          "documents": [
+            {
+              "id": "CORE-COUPLING",
+              "path": "core/coupling.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-NAMING",
+              "path": "core/naming.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-DI",
+              "path": "core/dependency-inversion.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-ERROR",
+              "path": "core/error-propagation.md",
+              "layer": "core"
+            },
+            {
+              "id": "CORE-SSOT",
+              "path": "core/single-source-of-truth.md",
+              "layer": "core"
+            },
+            {
+              "id": "PAT-DATA-ACCESS",
+              "path": "patterns/data-access-abstraction.md",
+              "layer": "patterns"
+            },
+            {
+              "id": "PAT-OUTCOME",
+              "path": "patterns/result-type.md",
+              "layer": "patterns"
+            },
+            {
+              "id": "PAT-OBSERVER",
+              "path": "patterns/observable-data.md",
+              "layer": "patterns"
+            },
+            {
+              "id": "ARCH-WEB-APP",
+              "path": "architectures/web-app/overview.md",
+              "layer": "architectures"
+            },
+            {
+              "id": "ARCH-WEB-APP-ERR-CLASSES",
+              "path": "architectures/web-app/error-classes.md",
+              "layer": "architectures"
+            },
+            {
+              "id": "PLAT-WEB-NEXT",
+              "path": "platforms/web/nextjs.md",
+              "layer": "platforms"
+            },
+            {
+              "id": "PLAT-WEB-NEXT-APP",
+              "path": "platforms/web/nextjs-app.md",
+              "layer": "platforms"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "scope": {
+    "paths": [],
+    "references": [],
+    "completion_conditions": [
+      "A customer-facing route renders a form with fields: Customer name, car brand, car model, description, urgency, and an optional safety_advice field",
+      "A submit button at the bottom of the form calls the shared create-fault Server Action from fault-data-foundation",
+      "On successful submission, the user sees a clear on-screen confirmation that their fault has been logged (no silent success, no dead-end)",
+      "Required fields (customer name, brand, model, description, urgency) cannot be submitted empty; safety_advice is optional",
+      "npm run build succeeds with no type errors"
+    ]
+  },
+  "bounds": {
+    "max_components": 10,
+    "max_paths": 30,
+    "max_references": 30
+  }
+}

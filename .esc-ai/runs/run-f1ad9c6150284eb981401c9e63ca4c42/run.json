@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "run": {
+    "id": "run-f1ad9c6150284eb981401c9e63ca4c42",
+    "task_id": "customer-fault-submission-screen",
+    "status": "succeeded",
+    "created_at": "2026-07-20T21:28:36.294408Z",
+    "started_at": "2026-07-20T21:28:36.294408Z",
+    "ended_at": "2026-07-20T21:31:46.707872Z"
+  },
+  "bindings": {
+    "adapter": "claude-code-claude",
+    "workspace": "workspace-garage-management-system-default",
+    "policy": "session-override-permissive",
+    "tool_grant": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Edit",
+      "Write",
+      "NotebookEdit",
+      "Bash",
+      "WebFetch",
+      "WebSearch"
+    ],
+    "instruction_bundle": "instruction-bundle.json"
+  },
+  "events": "events.jsonl",
+  "artifacts": [
+    "artifact.json"
+  ],
+  "adapter_metadata": {
+    "provider": "claude-code",
+    "session_id": "ba20f609-89d0-4d61-b84c-9eca166c209d",
+    "total_cost_usd": 0.7444411999999997,
+    "num_turns": 36
+  }
+}
