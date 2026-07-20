@@ -1,0 +1,11 @@
+schema_version: 1
+repository:
+  id: garage-management-system
+  type: npm-package
+components:
+- id: garage-management-system
+  manifest: .esc-ai/components/garage-management-system/esc-component.yaml
+generation:
+  generator: esc-exec
+  sources:
+  - package.json

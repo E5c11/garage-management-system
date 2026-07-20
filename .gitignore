@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /.idea/
+
+# escape-ai orchestrator process-local state (not portable, not committed)
+/.orchestrator/
+/.esc-ai/runs/

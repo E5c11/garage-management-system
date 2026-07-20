@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "generated_by": "esc-exec",
+  "input_digest": "sha256:b3ae05a274de3fea0f6e11508016ffeee8059387b75069bffd82e1c0a1d3bd8a",
+  "repository": "garage-management-system",
+  "nodes": [
+    {
+      "id": "garage-management-system",
+      "project": null,
+      "manifest": ".esc-ai/components/garage-management-system/esc-component.yaml"
+    }
+  ],
+  "edges": []
+}

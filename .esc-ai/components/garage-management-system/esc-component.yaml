@@ -1,0 +1,23 @@
+schema_version: 1
+component:
+  id: garage-management-system
+  type: npm-package
+  path: .
+  purpose: 'Turns free-text customer vehicle fault descriptions into structured fault
+    reports for a service adviser/workshop: a customer-facing submission form and
+    a manager dashboard for triaging, prioritizing, and resolving faults.'
+build:
+  system: npm
+paths:
+  documentation: README.md
+  build: package.json
+  source_app: app
+  architecture_profile: esc-architecture-profile.yaml
+generation:
+  generator: esc-exec
+  sources:
+  - package.json
+architecture:
+  profile_ids:
+  - PLAT-WEB-NEXT
+  - PLAT-WEB-NEXT-APP

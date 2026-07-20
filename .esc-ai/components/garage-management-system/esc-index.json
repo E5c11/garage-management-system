@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "generated_by": "esc-exec",
+  "input_digest": "sha256:f1ee98b741853c62349a33929a61ccc1d7fcdcfc1646b139aa86d3fc28dca404",
+  "repository": "garage-management-system",
+  "component": {
+    "id": "garage-management-system",
+    "type": "npm-package",
+    "path": ".",
+    "purpose": "Turns free-text customer vehicle fault descriptions into structured fault reports for a service adviser/workshop: a customer-facing submission form and a manager dashboard for triaging, prioritizing, and resolving faults.",
+    "manifest": ".esc-ai/components/garage-management-system/esc-component.yaml"
+  },
+  "routing": {
+    "domains": [],
+    "concerns": [],
+    "aliases": [],
+    "entry_point_terms": []
+  },
+  "search_roots": [
+    "README.md",
+    "app"
+  ],
+  "structure": {
+    "package_areas": [],
+    "entry_points": {},
+    "role_counts": {
+      "controllers": 0,
+      "services": 0,
+      "configurations": 0,
+      "repositories": 0,
+      "entities": 0
+    }
+  }
+}

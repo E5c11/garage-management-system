@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "generated_by": "esc-exec",
+  "input_digest": "sha256:b631ff273cf18bd21348a7909fae2f0c50590c1913711ec359955ec17fd28d48",
+  "repository": {
+    "id": "garage-management-system",
+    "purpose": "",
+    "manifest": ".esc-ai/esc-execution.yaml"
+  },
+  "components": [
+    {
+      "id": "garage-management-system",
+      "purpose": "Turns free-text customer vehicle fault descriptions into structured fault reports for a service adviser/workshop: a customer-facing submission form and a manager dashboard for triaging, prioritizing, and resolving faults.",
+      "path": ".",
+      "manifest": ".esc-ai/components/garage-management-system/esc-component.yaml",
+      "index": ".esc-ai/components/garage-management-system/esc-index.json",
+      "routing": {
+        "domains": [],
+        "concerns": [],
+        "aliases": []
+      }
+    }
+  ]
+}
